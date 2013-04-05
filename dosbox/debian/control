@@ -1,7 +1,7 @@
 Source: dosbox
 Section: otherosfs
 Priority: optional
-Maintainer: Jan Dittberner <jandd@debian.org>
+Maintainer:  loge <loge.gm@gmail.com>
 Homepage: http://www.dosbox.com/
 Build-Depends: debhelper (>= 7.0.50), libsdl1.2-dev, libpng-dev,
  libsdl-net1.2-dev, libsdl-sound1.2-dev, libasound2-dev, libmt32emu-dev
@@ -18,5 +18,5 @@ Description: x86 emulator with Tandy/Herc/CGA/EGA/VGA/SVGA graphics, sound and D
  don't support it. (Win2k/XP/FreeBSD/Linux/MAC OS X)
  .
  The following legacy sound devices are emulated: PC Speaker, Creative
- CMS/Gameblaster, Tandy 3 voice, Adlib, Sound Blaster Pro/16, 
+ CMS/Gameblaster, Tandy 3 voice, Adlib, Sound Blaster Pro/16, MT-32
  Disney Soundsource and a Gravis Ultrasound. MPU-401 is forwarded to the host.

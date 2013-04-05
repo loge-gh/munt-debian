@@ -1,6 +1,6 @@
 Source: libmt32emu
 Priority: extra
-Maintainer: loge <loge@debian.localdomain>
+Maintainer: loge <loge.gm@gmail.com>
 Build-Depends: debhelper (>= 8.0.0), cmake (>= 2.6.0)
 Standards-Version: 3.9.3
 Section: libs
