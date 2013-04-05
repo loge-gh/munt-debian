@@ -3,7 +3,7 @@
 mkdir temp
 cp -r orig/. temp
 cd temp
-tar -czf ../libmt32emu_1.1.1.orig.tar.gz *
+tar -czf ../libmt32emu_1.2.0.orig.tar.gz *
 cp -r ../debian .
 cd ..
 dpkg-source -b temp
