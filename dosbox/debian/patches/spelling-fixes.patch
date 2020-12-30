@@ -1,0 +1,345 @@
+Description: Spelling fixes
+Author: Stephen Kitt <skitt@debian.org>
+
+--- a/src/cpu/callback.cpp
++++ b/src/cpu/callback.cpp
+@@ -488,7 +488,7 @@
+ 		m_type=SETUP;
+ 		m_callback=CALLBACK_Allocate();
+ 		CALLBACK_Setup(m_callback,handler,type,description);
+-	} else E_Exit("Allready installed");
++	} else E_Exit("Already installed");
+ }
+ void CALLBACK_HandlerObject::Install(CallBack_Handler handler,Bitu type,PhysPt addr,const char* description){
+ 	if(!installed) {
+@@ -496,7 +496,7 @@
+ 		m_type=SETUP;
+ 		m_callback=CALLBACK_Allocate();
+ 		CALLBACK_Setup(m_callback,handler,type,addr,description);
+-	} else E_Exit("Allready installed");
++	} else E_Exit("Already installed");
+ }
+ 
+ void CALLBACK_HandlerObject::Allocate(CallBack_Handler handler,const char* description) {
+@@ -506,7 +506,7 @@
+ 		m_callback=CALLBACK_Allocate();
+ 		CALLBACK_SetDescription(m_callback,description);
+ 		CallBack_Handlers[m_callback]=handler;
+-	} else E_Exit("Allready installed");
++	} else E_Exit("Already installed");
+ }
+ 
+ void CALLBACK_HandlerObject::Set_RealVec(Bit8u vec){
+--- a/acinclude.m4
++++ b/acinclude.m4
+@@ -144,7 +144,7 @@
+           echo "*** If you have an old version installed, it is best to remove it, although"
+           echo "*** you may also be able to get things to work by modifying LD_LIBRARY_PATH"],
+         [ echo "*** The test program failed to compile or link. See the file config.log for the"
+-          echo "*** exact error that occured. This usually means SDL was incorrectly installed"
++          echo "*** exact error that occurred. This usually means SDL was incorrectly installed"
+           echo "*** or that you have moved SDL since it was installed. In the latter case, you"
+           echo "*** may want to edit the sdl-config script: $SDL_CONFIG" ])
+           CFLAGS="$ac_save_CFLAGS"
+--- a/configure
++++ b/configure
+@@ -5091,7 +5091,7 @@
+           echo "*** you may also be able to get things to work by modifying LD_LIBRARY_PATH"
+ else
+    echo "*** The test program failed to compile or link. See the file config.log for the"
+-          echo "*** exact error that occured. This usually means SDL was incorrectly installed"
++          echo "*** exact error that occurred. This usually means SDL was incorrectly installed"
+           echo "*** or that you have moved SDL since it was installed. In the latter case, you"
+           echo "*** may want to edit the sdl-config script: $SDL_CONFIG"
+ fi
+--- a/src/cpu/core_dyn_x86/cache.h
++++ b/src/cpu/core_dyn_x86/cache.h
+@@ -518,7 +518,7 @@
+ 
+ #if (C_HAVE_MPROTECT)
+ 			if(mprotect(cache_code_link_blocks,CACHE_TOTAL+CACHE_MAXSIZE+PAGESIZE_TEMP,PROT_WRITE|PROT_READ|PROT_EXEC))
+-				LOG_MSG("Setting excute permission on the code cache has failed!");
++				LOG_MSG("Setting execute permission on the code cache has failed!");
+ #endif
+ 			CacheBlock * block=cache_getblock();
+ 			cache.block.first=block;
+@@ -613,7 +613,7 @@
+ 
+ #if (C_HAVE_MPROTECT)
+ 			if(mprotect(cache_code_link_blocks,CACHE_TOTAL+CACHE_MAXSIZE+PAGESIZE_TEMP,PROT_WRITE|PROT_READ|PROT_EXEC))
+-				LOG_MSG("Setting excute permission on the code cache has failed!");
++				LOG_MSG("Setting execute permission on the code cache has failed!");
+ #endif
+ 		}
+ 
+--- a/src/cpu/core_dynrec/cache.h
++++ b/src/cpu/core_dynrec/cache.h
+@@ -603,7 +603,7 @@
+ 
+ #if (C_HAVE_MPROTECT)
+ 			if(mprotect(cache_code_link_blocks,CACHE_TOTAL+CACHE_MAXSIZE+PAGESIZE_TEMP,PROT_WRITE|PROT_READ|PROT_EXEC))
+-				LOG_MSG("Setting excute permission on the code cache has failed");
++				LOG_MSG("Setting execute permission on the code cache has failed");
+ #endif
+ 			CacheBlockDynRec * block=cache_getblock();
+ 			cache.block.first=block;
+--- a/src/cpu/flags.cpp
++++ b/src/cpu/flags.cpp
+@@ -117,7 +117,7 @@
+ 	case t_TESTd:
+ 		return false;	/* Set to false */
+ 	case t_DIV:
+-		return false;	/* Unkown */
++		return false;	/* Unknown */
+ 	default:
+ 		LOG(LOG_CPU,LOG_ERROR)("get_CF Unknown %d",lflags.type);
+ 	}
+@@ -199,7 +199,7 @@
+ 	case t_DSHRd:
+ 	case t_DIV:
+ 	case t_MUL:
+-		return false;			          /* Unkown */
++		return false;			          /* Unknown */
+ 	default:
+ 		LOG(LOG_CPU,LOG_ERROR)("get_AF Unknown %d",lflags.type);
+ 	}
+@@ -268,7 +268,7 @@
+ 		return (lf_resd==0);
+ 	case t_DIV:
+ 	case t_MUL:
+-		return false;		/* Unkown */
++		return false;		/* Unknown */
+ 	default:
+ 		LOG(LOG_CPU,LOG_ERROR)("get_ZF Unknown %d",lflags.type);
+ 	}
+@@ -336,9 +336,9 @@
+ 		return	(lf_resd&0x80000000);
+ 	case t_DIV:
+ 	case t_MUL:
+-		return false;	/* Unkown */
++		return false;	/* Unknown */
+ 	default:
+-		LOG(LOG_CPU,LOG_ERROR)("get_SF Unkown %d",lflags.type);
++		LOG(LOG_CPU,LOG_ERROR)("get_SF Unknown %d",lflags.type);
+ 	}
+ 	return false;
+ 
+@@ -424,9 +424,9 @@
+ 	case t_SARd:
+ 		return false;			/* Return false */
+ 	case t_DIV:
+-		return false;		/* Unkown */
++		return false;		/* Unknown */
+ 	default:
+-		LOG(LOG_CPU,LOG_ERROR)("get_OF Unkown %d",lflags.type);
++		LOG(LOG_CPU,LOG_ERROR)("get_OF Unknown %d",lflags.type);
+ 	}
+ 	return false;
+ }
+--- a/src/dos/dos.cpp
++++ b/src/dos/dos.cpp
+@@ -848,7 +848,7 @@
+ 			reg_bh=0;	//Unspecified error class
+ 		}
+ 		reg_bl=1;	//Retry retry retry
+-		reg_ch=0;	//Unkown error locus
++		reg_ch=0;	//Unknown error locus
+ 		break;
+ 	case 0x5a:					/* Create temporary file */
+ 		{
+--- a/src/dos/dos_mscdex.cpp
++++ b/src/dos/dos_mscdex.cpp
+@@ -301,7 +301,7 @@
+ 	case 0x02:	// fake cdrom interface (directories)
+ 		cdrom[numDrives] = new CDROM_Interface_Fake;
+ 		LOG(LOG_MISC,LOG_NORMAL)("MSCDEX: Mounting directory as cdrom: %s",physicalPath);
+-		LOG(LOG_MISC,LOG_NORMAL)("MSCDEX: You wont have full MSCDEX support !");
++		LOG(LOG_MISC,LOG_NORMAL)("MSCDEX: You won't have full MSCDEX support !");
+ 		result = 5;
+ 		break;
+ 	default	:	// weird result
+@@ -1205,7 +1205,7 @@
+ 						}
+ 						return true;
+ 	};
+-	LOG(LOG_MISC,LOG_ERROR)("MSCDEX: Unknwon call : %04X",reg_ax);
++	LOG(LOG_MISC,LOG_ERROR)("MSCDEX: Unknown call : %04X",reg_ax);
+ 	return true;
+ }
+ 
+--- a/src/dos/dos_programs.cpp
++++ b/src/dos/dos_programs.cpp
+@@ -1473,7 +1473,7 @@
+ 		"For information about special keys type \033[34;1mintro special\033[0m\n"
+ 		"For more information about DOSBox, go to \033[34;1mhttp://www.dosbox.com/wiki\033[0m\n"
+ 		"\n"
+-		"\033[31;1mDOSBox will stop/exit without a warning if an error occured!\033[0m\n"
++		"\033[31;1mDOSBox will stop/exit without a warning if an error occurred!\033[0m\n"
+ 		"\n"
+ 		"\n"
+ 		);
+--- a/src/dos/drive_fat.cpp
++++ b/src/dos/drive_fat.cpp
+@@ -670,7 +670,7 @@
+ 			}
+ 		}
+ 
+-		if(m==4) LOG_MSG("No good partiton found in image.");
++		if(m==4) LOG_MSG("No good partition found in image.");
+ 
+ 		partSectOff = startSector;
+ 	} else {
+--- a/src/hardware/ipx.cpp
++++ b/src/hardware/ipx.cpp
+@@ -883,7 +883,7 @@
+ 		if(strcasecmp("stopserver", helpStr) == 0) {
+ 			WriteOut("IPXNET STOPSERVER stops the IPX tunneling server running on this DosBox\nsession.");
+ 			WriteOut("  Care should be taken to ensure that all other connections have\nterminated ");
+-			WriteOut("as well sinnce stoping the server may cause lockups on other\nmachines still using ");
++			WriteOut("as well sinnce stopping the server may cause lockups on other\nmachines still using ");
+ 			WriteOut("the IPX tunneling server.\n\n");
+ 			WriteOut("The syntax for IPXNET STOPSERVER is:\n\n");
+ 			WriteOut("IPXNET STOPSERVER\n\n");
+--- a/src/ints/bios.cpp
++++ b/src/ints/bios.cpp
+@@ -562,7 +562,7 @@
+ 	static Bit16u biosConfigSeg=0;
+ 	switch (reg_ah) {
+ 	case 0x06:
+-		LOG(LOG_BIOS,LOG_NORMAL)("INT15 Unkown Function 6");
++		LOG(LOG_BIOS,LOG_NORMAL)("INT15 Unknown Function 6");
+ 		break;
+ 	case 0xC0:	/* Get Configuration*/
+ 		{
+--- a/src/gui/sdl_mapper.cpp
++++ b/src/gui/sdl_mapper.cpp
+@@ -2105,7 +2105,7 @@
+ }
+ 
+ void MAPPER_AddHandler(MAPPER_Handler * handler,MapKeys key,Bitu mods,char const * const eventname,char const * const buttonname) {
+-	//Check if it allready exists=> if so return.
++	//Check if it already exists=> if so return.
+ 	for(CHandlerEventVector_it it=handlergroup.begin();it!=handlergroup.end();it++)
+ 		if(strcmp((*it)->buttonname,buttonname) == 0) return;
+ 
+--- a/src/gui/sdlmain.cpp
++++ b/src/gui/sdlmain.cpp
+@@ -1691,7 +1691,7 @@
+ 	Pstring->Set_values(inactt);
+ 
+ 	Pstring = sdl_sec->Add_path("mapperfile",Property::Changeable::Always,MAPPERFILE);
+-	Pstring->Set_help("File used to load/save the key/event mappings from. Resetmapper only works with the defaul value.");
++	Pstring->Set_help("File used to load/save the key/event mappings from. Resetmapper only works with the default value.");
+ 
+ 	Pbool = sdl_sec->Add_bool("usescancodes",Property::Changeable::Always,true);
+ 	Pbool->Set_help("Avoid usage of symkeys, might not work on all operating systems.");
+@@ -2037,7 +2037,7 @@
+ 		Section_prop * sdl_sec=static_cast<Section_prop *>(control->GetSection("sdl"));
+ 
+ 		if (control->cmdline->FindExist("-fullscreen") || sdl_sec->Get_bool("fullscreen")) {
+-			if(!sdl.desktop.fullscreen) { //only switch if not allready in fullscreen
++			if(!sdl.desktop.fullscreen) { //only switch if not already in fullscreen
+ 				GFX_SwitchFullScreen();
+ 			}
+ 		}
+--- a/src/hardware/iohandler.cpp
++++ b/src/hardware/iohandler.cpp
+@@ -116,7 +116,7 @@
+ 		m_mask=mask;
+ 		m_range=range;
+ 		IO_RegisterReadHandler(port,handler,mask,range);
+-	} else E_Exit("IO_readHandler allready installed port %x",port);
++	} else E_Exit("IO_readHandler already installed port %x",port);
+ }
+ 
+ IO_ReadHandleObject::~IO_ReadHandleObject(){
+@@ -131,7 +131,7 @@
+ 		m_mask=mask;
+ 		m_range=range;
+ 		IO_RegisterWriteHandler(port,handler,mask,range);
+-	} else E_Exit("IO_writeHandler allready installed port %x",port);
++	} else E_Exit("IO_writeHandler already installed port %x",port);
+ }
+ 
+ IO_WriteHandleObject::~IO_WriteHandleObject(){
+--- a/src/hardware/keyboard.cpp
++++ b/src/hardware/keyboard.cpp
+@@ -127,7 +127,7 @@
+ 			KEYBOARD_AddBuffer(0xfa);	/* Acknowledge */
+ 			break;
+ 		case 0xf4:	/* Enable keyboard,clear buffer, start scanning */
+-			LOG(LOG_KEYBOARD,LOG_NORMAL)("Clear buffer,enable Scaning");
++			LOG(LOG_KEYBOARD,LOG_NORMAL)("Clear buffer,enable Scanning");
+ 			KEYBOARD_AddBuffer(0xfa);	/* Acknowledge */
+ 			keyb.scanning=true;
+ 			break;
+--- a/src/hardware/mixer.cpp
++++ b/src/hardware/mixer.cpp
+@@ -602,7 +602,7 @@
+ 		installed = true;
+ 		return MIXER_AddChannel(handler,freq,name);
+ 	} else {
+-		E_Exit("allready added mixer channel.");
++		E_Exit("already added mixer channel.");
+ 		return 0; //Compiler happy
+ 	}
+ }
+--- a/src/hardware/vga_attr.cpp
++++ b/src/hardware/vga_attr.cpp
+@@ -184,7 +184,7 @@
+ 				svga.write_p3c0(attr(index), val, iolen);
+ 				break;
+ 			}
+-			LOG(LOG_VGAMISC,LOG_NORMAL)("VGA:ATTR:Write to unkown Index %2X",attr(index));
++			LOG(LOG_VGAMISC,LOG_NORMAL)("VGA:ATTR:Write to unknown Index %2X",attr(index));
+ 			break;
+ 		}
+ 	}
+@@ -212,7 +212,7 @@
+ 	default:
+ 		if (svga.read_p3c1)
+ 			return svga.read_p3c1(attr(index), iolen);
+-		LOG(LOG_VGAMISC,LOG_NORMAL)("VGA:ATTR:Read from unkown Index %2X",attr(index));
++		LOG(LOG_VGAMISC,LOG_NORMAL)("VGA:ATTR:Read from unknown Index %2X",attr(index));
+ 	}
+ 	return 0;
+ }
+--- a/src/shell/shell.cpp
++++ b/src/shell/shell.cpp
+@@ -50,14 +50,14 @@
+ void VFILE_Remove(const char *name);
+ 
+ void AutoexecObject::Install(const std::string &in) {
+-	if(GCC_UNLIKELY(installed)) E_Exit("autoexec: allready created %s",buf.c_str());
++	if(GCC_UNLIKELY(installed)) E_Exit("autoexec: already created %s",buf.c_str());
+ 	installed = true;
+ 	buf = in;
+ 	autoexec_strings.push_back(buf);
+ 	this->CreateAutoexec();
+ 
+ 	//autoexec.bat is normally created AUTOEXEC_Init.
+-	//But if we are allready running (first_shell)
++	//But if we are already running (first_shell)
+ 	//we have to update the envirionment to display changes
+ 
+ 	if(first_shell)	{
+@@ -78,7 +78,7 @@
+ }
+ 
+ void AutoexecObject::InstallBefore(const std::string &in) {
+-	if(GCC_UNLIKELY(installed)) E_Exit("autoexec: allready created %s",buf.c_str());
++	if(GCC_UNLIKELY(installed)) E_Exit("autoexec: already created %s",buf.c_str());
+ 	installed = true;
+ 	buf = in;
+ 	autoexec_strings.push_front(buf);
+--- a/src/shell/shell_cmds.cpp
++++ b/src/shell/shell_cmds.cpp
+@@ -285,7 +285,7 @@
+ 	args++;//skip first character. either a slash or dot or space
+ 	size_t len = strlen(args); //TODO check input of else ook nodig is.
+ 	if(len && args[len - 1] == '\r') {
+-		LOG(LOG_MISC,LOG_WARN)("Hu ? carriage return allready present. Is this possible?");
++		LOG(LOG_MISC,LOG_WARN)("Hu ? carriage return already present. Is this possible?");
+ 		WriteOut("%s\n",args);
+ 	} else WriteOut("%s\r\n",args);
+ }

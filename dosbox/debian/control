@@ -1,22 +1,25 @@
-Source: dosbox
+Source: dosbox-mt32
 Section: otherosfs
 Priority: optional
-Maintainer:  loge <loge.gm@gmail.com>
+Maintainer: loge <loge.gm@gmail.com>
 Homepage: http://www.dosbox.com/
-Build-Depends: debhelper (>= 7.0.50), libsdl1.2-dev, libpng-dev,
- libsdl-net1.2-dev, libsdl-sound1.2-dev, libasound2-dev, libmt32emu-dev
-Standards-Version: 3.9.3
-Vcs-Git: git://git.debian.org/git/collab-maint/dosbox.git
-Vcs-Browser: http://git.debian.org/?p=collab-maint/dosbox.git;a=summary
+Build-Depends: debhelper-compat (= 12), libsdl1.2-dev, libpng-dev,
+ libsdl-net1.2-dev, libsdl-sound1.2-dev, libasound2-dev,
+ libncurses5-dev | libncurses-dev, libmt32emu-dev
+Standards-Version: 4.3.0
+Rules-Requires-Root: no
 
-Package: dosbox
+Package: dosbox-mt32
 Architecture: any
+Multi-Arch: foreign
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: x86 emulator with Tandy/Herc/CGA/EGA/VGA/SVGA graphics, sound and DOS
- DOSBox is a x86 emulator with Tandy/Hercules/CGA/EGA/VGA/SVGA graphics, 
- sound and DOS. It's been designed to run old DOS games under platforms that 
- don't support it. (Win2k/XP/FreeBSD/Linux/MAC OS X)
+ DOSBox is a x86 emulator with Tandy/Hercules/CGA/EGA/VGA/SVGA graphics,
+ sound and DOS. It's been designed to run old DOS games on platforms that
+ don't support it.
  .
  The following legacy sound devices are emulated: PC Speaker, Creative
- CMS/Gameblaster, Tandy 3 voice, Adlib, Sound Blaster Pro/16, MT-32
- Disney Soundsource and a Gravis Ultrasound. MPU-401 is forwarded to the host.
+ CMS/Gameblaster, Tandy 3 voice, Adlib, Sound Blaster Pro/16,
+ Disney Soundsource, Gravis Ultrasound, MT-32. MPU-401 is forwarded to
+ the host.
+

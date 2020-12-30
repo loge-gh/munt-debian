@@ -1,2 +1,2 @@
 version=3
-http://sf.net/dosbox/dosbox-(.*)\.tar\.gz
+https://sf.net/dosbox/dosbox-(\d[.-\d]*)\.tar\.gz

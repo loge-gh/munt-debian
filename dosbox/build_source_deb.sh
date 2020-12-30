@@ -1,10 +1,10 @@
 #!/bin/sh
 #build source package
-mkdir temp
-cp -r orig/. temp
-cd temp
-tar -czf ../dosbox_0.74.orig.tar.gz *
+tar -xf orig/dosbox-0.74-3.tar.gz
+cp orig/dosbox-0.74-3.tar.gz dosbox-mt32_0.74.orig.tar.gz
+cd dosbox-0.74-3
 cp -r ../debian .
+dpkg-source -b .
 cd ..
-dpkg-source -b temp
-rm -r temp
+rm -r dosbox-0.74-3
+

@@ -1,10 +1,10 @@
 #!/bin/sh
 #build source package
-mkdir temp
-cp -r orig/. temp
-cd temp
-tar -czf ../libmt32emu_1.2.0.orig.tar.gz *
+cp orig/munt-libmt32emu_2_4_1.tar.gz libmt32emu_2.4.1.orig.tar.gz
+tar -xf orig/munt-libmt32emu_2_4_1.tar.gz
+cd munt-libmt32emu_2_4_1
 cp -r ../debian .
+dpkg-source -b .
 cd ..
-dpkg-source -b temp
-rm -r temp
+rm -r munt-libmt32emu_2_4_1
+

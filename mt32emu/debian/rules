@@ -10,4 +10,8 @@
 #export DH_VERBOSE=1
 
 %:
-	dh $@ 
+	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- -DCMAKE_BUILD_TYPE:STRING=Release -Dlibmt32emu_SHARED=FALSE -Dmunt_WITH_MT32EMU_QT=OFF -Dmunt_WITH_MT32EMU_SMF2WAV=OFF
+

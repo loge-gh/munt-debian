@@ -1,4 +1,12 @@
 #!/usr/bin/make -f
 
+export DEB_CPPFLAGS_MAINT_APPEND=-D_FILE_OFFSET_BITS=64
+
 %:
 	dh $@
+
+override_dh_install:
+	mv debian/dosbox-mt32/usr/bin/dosbox debian/dosbox-mt32/usr/bin/dosbox-mt32
+	rm -r debian/dosbox-mt32/usr/share/man
+	dh_install
+

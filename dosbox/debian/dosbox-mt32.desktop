@@ -1,0 +1,23 @@
+[Desktop Entry]
+Type=Application
+Name=DOSBox-MT32 Emulator
+Name[ca]=Emulador DOSBox-MT32
+Name[de]=DOSBox-MT32 Emulator
+Name[es]=Emulador DOSBox-MT32
+Name[nl]=DOSBox-MT32 Simulator
+Name[ru]=Эмулятор DOSBox-MT32
+Name[it]=DOSBox-MT32 emulatore
+Name[ua]=Емулятор DOSBox-MT32
+Comment=Run old DOS applications
+Comment[ca]=Executeu antigues aplicacions DOS
+Comment[de]=Ein Emulator für alte DOS Programme
+Comment[es]=Un emulador para ejecutar antiguas aplicaciones DOS
+Comment[nl]=Een simulator om oude DOS-spellen te spelen
+Comment[ru]=Запуск старых DOS-приложений
+Comment[it]=Un emulatore per far girare vecchi giochi DOS
+Comment[ua]=Запуск старих DOS-застосувань
+Icon=dosbox-mt32
+Exec=dosbox-mt32
+Terminal=false
+Categories=Game;Emulator;
+Keywords=DOS Emulator;

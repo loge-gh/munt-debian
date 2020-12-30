@@ -1,1 +1,1 @@
-libmt32emu 1.1.1 libmt32emu (>> 1.1.1-0), libmt32emu (<< 1.1.1-99)
+libmt32emu 2.4.1 libmt32emu (>> 2.4.1-0), libmt32emu (<< 2.4.1-99)

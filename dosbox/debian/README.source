@@ -1,0 +1,11 @@
+Icons
+-----
+
+Icons in debian/icons are taken from http://www.vogons.org/download/file.php?id=3449
+published by ChaosFish in a DOSBox forum thread at
+http://www.vogons.org/viewtopic.php?f=32&t=9737&start=240#p93797
+
+DOSBoxIcon-v6.1.2.zip was chosen by DOSBox authors as the official DOSBox icon
+set. The PNGs are not present in upstream source package, but the ICO file
+ICO/dosboxicon6.1.2.ico in the zipfile is bitwise identical to upstream
+src/dosbox.ico
