@@ -22,7 +22,7 @@ mt32.romdir default is ./
 Munt patch prefers CM32L ROM over MT32 ROM if both are present in mt32.romdir.
 
 There's another options like
-
+```
 mt32.reverse.stereo
 mt32.verbose
 mt32.dac
@@ -36,7 +36,7 @@ mt32.prebuffer
 mt32.analog
 mt32.src.qualitya
 mt32.nicepreamp
-
+```
 They're described in the mt32options.h section of the mt32-asyncthread patch source.
 
 Tested on buster-amd64.
